@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://o7j060ubhlmf"]
+[gd_scene load_steps=15 format=3 uid="uid://o7j060ubhlmf"]
 
-[ext_resource type="Script" path="res://Entity/Enemy.cs" id="1_xy64w"]
+[ext_resource type="Script" path="res://src/scripts/Enemy.cs" id="1_xy64w"]
 [ext_resource type="Texture2D" uid="uid://d07ppv5fkfxui" path="res://New Piskel (21).png" id="2_360m3"]
+[ext_resource type="PackedScene" uid="uid://v6vearw63h4b" path="res://Entity/bullet.tscn" id="2_onfci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67klo"]
 atlas = ExtResource("2_360m3")
@@ -58,9 +59,9 @@ animations = [{
 "duration": 0.2,
 "texture": SubResource("AtlasTexture_cuvlx")
 }],
-"loop": true,
+"loop": false,
 "name": &"fire",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 0.1,
@@ -74,7 +75,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"take_hit",
-"speed": 2.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlv33"]
@@ -87,6 +88,9 @@ radius = 111.0
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_xy64w")
+movementSpeed = 50.0
+fireRate = 2.0
+bulletScene = ExtResource("2_onfci")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.666667, 0, 0.0705882, 1)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://buxlbwdj2thqc"]
 
 [ext_resource type="PackedScene" uid="uid://vjmnok5nac1r" path="res://Entity/Tank.tscn" id="1_llfjg"]
-[ext_resource type="Script" path="res://scene/CameraShaker.cs" id="2_imaym"]
+[ext_resource type="Script" path="res://src/scripts/CameraShaker.cs" id="2_o8yi6"]
 [ext_resource type="Texture2D" uid="uid://d01kg05p16t6n" path="res://Asset/environment_sprite.png" id="2_r2ply"]
 [ext_resource type="PackedScene" uid="uid://o7j060ubhlmf" path="res://Entity/Enemy.tscn" id="4_fvn3v"]
 
@@ -45,7 +45,7 @@ drag_vertical_enabled = true
 drag_top_margin = 0.21
 drag_right_margin = 0.21
 drag_bottom_margin = 0.19
-script = ExtResource("2_imaym")
+script = ExtResource("2_o8yi6")
 shakeDuration = 0.05
 intensity = 3.0
 
@@ -57,12 +57,9 @@ layer_0/tile_data = PackedInt32Array(0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0
 
 [node name="Enemy" parent="." instance=ExtResource("4_fvn3v")]
 position = Vector2(107, 144)
-movementSpeed = 50.0
 
 [node name="Enemy2" parent="." instance=ExtResource("4_fvn3v")]
 position = Vector2(465, 150)
-movementSpeed = 50.0
 
 [node name="Enemy3" parent="." instance=ExtResource("4_fvn3v")]
 position = Vector2(288, 281)
-movementSpeed = 50.0

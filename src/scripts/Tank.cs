@@ -31,7 +31,7 @@ public partial class Tank : CharacterBody2D
 		}
 		if (Input.IsActionJustPressed("FIRE"))
 		{
-			animatedSprite.Play("fire");
+			animatedSprite.Play(AnimationConstants.FIRE);
 			RigidBody2D bulletBody = bulletScene.Instantiate() as RigidBody2D;
 			bulletBody.Position = rayCast.GlobalPosition;
 			bulletBody.Rotation = this.Rotation;

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://v6vearw63h4b"]
 
-[ext_resource type="Script" path="res://Entity/Bullet.cs" id="1_7tqve"]
+[ext_resource type="Script" path="res://src/scripts/Bullet.cs" id="1_7tqve"]
 [ext_resource type="Texture2D" uid="uid://d07ppv5fkfxui" path="res://New Piskel (21).png" id="2_twvel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7x2lm"]

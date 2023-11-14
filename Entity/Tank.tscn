@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://vjmnok5nac1r"]
 
-[ext_resource type="Script" path="res://Entity/Tank.cs" id="1_6227a"]
+[ext_resource type="Script" path="res://src/scripts/Tank.cs" id="1_6227a"]
 [ext_resource type="Texture2D" uid="uid://d07ppv5fkfxui" path="res://New Piskel (21).png" id="2_01emg"]
 [ext_resource type="PackedScene" uid="uid://v6vearw63h4b" path="res://Entity/bullet.tscn" id="2_xohis"]
 
