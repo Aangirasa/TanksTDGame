@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://vjmnok5nac1r"]
+
+[ext_resource type="Script" path="res://Entity/Tank.cs" id="1_6227a"]
+[ext_resource type="Texture2D" uid="uid://d07ppv5fkfxui" path="res://New Piskel (21).png" id="2_01emg"]
+[ext_resource type="PackedScene" uid="uid://v6vearw63h4b" path="res://Entity/bullet.tscn" id="2_xohis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kclon"]
+size = Vector2(12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6fgn"]
+atlas = ExtResource("2_01emg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rq6l"]
+atlas = ExtResource("2_01emg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsy8e"]
+atlas = ExtResource("2_01emg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e1uy"]
+atlas = ExtResource("2_01emg")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihvui"]
+atlas = ExtResource("2_01emg")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8k6u"]
+atlas = ExtResource("2_01emg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtat2"]
+atlas = ExtResource("2_01emg")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_alfej"]
+animations = [{
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_s6fgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rq6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_lsy8e")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_6e1uy")
+}, {
+"duration": 0.11,
+"texture": SubResource("AtlasTexture_ihvui")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_t8k6u")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_mtat2")
+}],
+"loop": false,
+"name": &"takeHit",
+"speed": 2.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_6227a")
+bulletScene = ExtResource("2_xohis")
+move_speed = 350.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_kclon")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_alfej")
+animation = &"fire"
+autoplay = "default"
+frame = 2
+frame_progress = 1.0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://v6vearw63h4b"]
+
+[ext_resource type="Script" path="res://Entity/Bullet.cs" id="1_7tqve"]
+[ext_resource type="Texture2D" uid="uid://d07ppv5fkfxui" path="res://New Piskel (21).png" id="2_twvel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x2lm"]
+atlas = ExtResource("2_twvel")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brc1x"]
+size = Vector2(2, 2)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+freeze_mode = 1
+script = ExtResource("1_7tqve")
+speed = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_7x2lm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_brc1x")
